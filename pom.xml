@@ -35,6 +35,11 @@
             <artifactId>PersistentStorageAPI</artifactId>
             <version>1.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>pl.zankowski</groupId>
+            <artifactId>iextrading4j-api</artifactId>
+            <version>3.3.2</version>
+        </dependency>
     </dependencies>
 
 </project>

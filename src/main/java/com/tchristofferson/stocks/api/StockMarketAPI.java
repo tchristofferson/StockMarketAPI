@@ -1,6 +1,9 @@
 package com.tchristofferson.stocks.api;
 
 import com.tchristofferson.stocks.api.core.IStockStorage;
+import pl.zankowski.iextrading4j.api.stocks.Quote;
+
+import java.util.concurrent.Future;
 
 public class StockMarketAPI {
 
@@ -17,6 +20,10 @@ public class StockMarketAPI {
 
     public static IStockStorage getStockStorage() {
         return implementation.getStockStorage();
+    }
+
+    public static Future<Quote> getStockPrice(String symbol) {
+        return implementation.getStockPrice(symbol);
     }
 
 }
