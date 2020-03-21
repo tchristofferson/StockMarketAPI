@@ -26,4 +26,7 @@ public class StockMarketAPI {
         return implementation.getStockData(symbol);
     }
 
+    public static Future<IStockData[]> getStockData(String... symbols) {
+        return implementation.getStockData(symbols);
+    }
 }

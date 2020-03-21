@@ -21,4 +21,6 @@ public interface StocksPlugin extends Plugin {
      */
     Future<IStockData> getStockData(String symbol);
 
+    Future<IStockData[]> getStockData(String... symbols);
+
 }
