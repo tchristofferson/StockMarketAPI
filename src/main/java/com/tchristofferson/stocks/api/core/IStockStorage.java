@@ -1,5 +1,7 @@
 package com.tchristofferson.stocks.api.core;
 
+import org.bukkit.entity.Player;
+
 import java.util.UUID;
 import java.util.concurrent.Future;
 
@@ -17,6 +19,13 @@ public interface IStockStorage {
      * @return The player's {@link IPlayerStockData}
      */
     IPlayerStockData getPlayerData(UUID uuid);
+
+    /**
+     * Get an online player's data
+     * @param playerName The name of the player, returned from {@link Player#getName()}
+     * @return the player's {@link IPlayerStockData}
+     */
+    IPlayerStockData getPlayerData(String playerName);
 
     /**
      * Save an instance of {@link IPlayerStockData} for a player.

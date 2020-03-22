@@ -49,8 +49,7 @@ public interface IPlayerStockData {
 
     /**
      * Give a player a specified amount of shares of the specified stock.
-     * This should only be used if a player doesn't already own the specified stock.
-     * If they own the stock use {@link IPlayerStockData#getStock(String)} and {@link IStock#setShares(int)}
+     * If the player already owns shares of this stock, it will be added
      * @param symbol The stock symbol
      * @param shares The amount of shares to give
      * @return The {@link IStock} just added
