@@ -1,14 +1,14 @@
 package com.tchristofferson.stocks.api.events;
 
-import com.tchristofferson.stocks.api.core.IStock;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
 
-public class PlayerBuySharesEvent extends StockEvent {
+public class PlayerBuySharesEvent extends PriceableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
 
-    public PlayerBuySharesEvent(IStock IStock, int shares, double price) {
-        super(IStock, shares, price);
+    public PlayerBuySharesEvent(OfflinePlayer owner, String symbol, int shares, double price) {
+        super(owner, symbol, shares, price);
     }
 
     @Override

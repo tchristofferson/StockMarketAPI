@@ -1,33 +1,36 @@
 package com.tchristofferson.stocks.api.events;
 
-import com.tchristofferson.stocks.api.core.IStock;
 import org.apache.commons.lang.Validate;
-import org.bukkit.event.Event;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
 
-public class StockCooldownSetEvent extends Event {
+public class StockCooldownSetEvent extends OwnerableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
+    private final String symbol;
+    private long expire;
 
-    private final IStock stock;
-    private long wait;
-
-    public StockCooldownSetEvent(IStock stock, long wait) {
-        this.stock = stock;
-        this.wait = wait;
+    public StockCooldownSetEvent(OfflinePlayer owner, String symbol, long expire) {
+        super(owner);
+        this.symbol = symbol;
+        this.expire = expire;
     }
 
-    public IStock getStock() {
-        return stock;
+    public String getSymbol() {
+        return symbol;
     }
 
-    public long getWait() {
-        return wait;
+    public long getExpire() {
+        return expire;
     }
 
-    public void setWait(long wait) {
-        Validate.isTrue(wait >= 0, "wait must be >= 0");
-        this.wait = wait;
+    public void setCooldown(long wait) {
+        Validate.isTrue(wait >= 0, "waitTime must be >= 0");
+
+        if (wait == 0)
+            expire = 0;
+        else
+            expire = System.currentTimeMillis() + wait;
     }
 
     @Override
@@ -38,5 +41,4 @@ public class StockCooldownSetEvent extends Event {
     public static HandlerList getHandlerList() {
         return handlers;
     }
-
 }

@@ -1,25 +1,22 @@
 package com.tchristofferson.stocks.api.events;
 
-import com.tchristofferson.stocks.api.core.IStock;
-import org.bukkit.Bukkit;
-import org.bukkit.event.Cancellable;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerEvent;
 
-public class PlayerPreSellAllSharesEvent extends PlayerEvent implements Cancellable {
-
+public class OwnerableStockEvent extends Event implements IStockEvent {
     private static final HandlerList handlers = new HandlerList();
-
-    private final IStock[] IStocks;
+    private final OfflinePlayer owner;
     private boolean canceled;
 
-    public PlayerPreSellAllSharesEvent(IStock[] IStocks) {
-        super(Bukkit.getPlayer(IStocks[0].getOwner()));
-        this.IStocks = IStocks;
+    protected OwnerableStockEvent(OfflinePlayer owner) {
+        this.owner = owner;
+        this.canceled = false;
     }
 
-    public IStock[] getStocks() {
-        return IStocks;
+    @Override
+    public OfflinePlayer getOwner() {
+        return owner;
     }
 
     @Override
