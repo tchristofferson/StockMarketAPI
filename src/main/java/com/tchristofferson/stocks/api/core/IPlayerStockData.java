@@ -45,7 +45,10 @@ public interface IPlayerStockData {
      * @param shares How many shares to check that they have
      * @return {@code true} if the player has the specified number of shares of the specified stock, {@code false} otherwise
      */
-    boolean hasStock(String symbol, int shares);
+    default boolean hasStock(String symbol, int shares) {
+        IStock stock = getStock(symbol);
+        return stock != null && stock.getShares() >= shares;
+    }
 
     /**
      * Give a player a specified amount of shares of the specified stock.
