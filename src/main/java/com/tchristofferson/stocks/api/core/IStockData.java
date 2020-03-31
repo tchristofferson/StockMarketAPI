@@ -59,8 +59,14 @@ public interface IStockData {
     BigDecimal getLowPrice();
 
     /**
+     * Get if the US market is currently open
+     * @return {@code true} if the US market is open, {@code false} otherwise
+     */
+    Boolean isMarketOpen();
+
+    /**
      * Get if the data was retrieved successfully.
-     * If failed to retrieve data most methods will return {@code null}, except for {@link IStockData#getMessage()}
+     * If failed to retrieve data all methods will return {@code null}, except for {@link IStockData#getMessage()}
      * @return {@code true} if data was successfully retrieved, {@code false} otherwise
      */
     boolean wasSuccessful();
