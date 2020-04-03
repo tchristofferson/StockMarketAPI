@@ -4,6 +4,8 @@ import com.tchristofferson.stocks.api.core.IStockData;
 import com.tchristofferson.stocks.api.core.IStockStorage;
 import org.bukkit.plugin.Plugin;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Future;
 
 public interface StocksPlugin extends Plugin {
@@ -21,6 +23,10 @@ public interface StocksPlugin extends Plugin {
      */
     Future<IStockData> getStockData(String symbol);
 
-    Future<IStockData[]> getStockData(String... symbols);
+    Future<IStockData[]> getStockData(List<String> symbols);
+
+    default Future<IStockData[]> getStockData(String... symbols) {
+        return getStockData(Arrays.asList(symbols));
+    }
 
 }

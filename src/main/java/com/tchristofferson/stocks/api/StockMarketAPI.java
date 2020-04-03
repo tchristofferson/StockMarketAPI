@@ -3,6 +3,7 @@ package com.tchristofferson.stocks.api;
 import com.tchristofferson.stocks.api.core.IStockData;
 import com.tchristofferson.stocks.api.core.IStockStorage;
 
+import java.util.List;
 import java.util.concurrent.Future;
 
 public class StockMarketAPI {
@@ -27,6 +28,10 @@ public class StockMarketAPI {
     }
 
     public static Future<IStockData[]> getStockData(String... symbols) {
+        return implementation.getStockData(symbols);
+    }
+
+    public static Future<IStockData[]> getStockData(List<String> symbols) {
         return implementation.getStockData(symbols);
     }
 }
