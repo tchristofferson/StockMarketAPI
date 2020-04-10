@@ -15,4 +15,10 @@ public interface NameGettableStorage extends SingleStorage<IPlayerStockData, UUI
      */
     IPlayerStockData getUsingName(String name) throws Exception;
 
+    /**
+     * Updates the structure of what your saving to.
+     * If the storage is a database you may update columns here
+     */
+    void update() throws Exception;
+
 }

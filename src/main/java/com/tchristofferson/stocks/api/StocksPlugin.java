@@ -28,5 +28,4 @@ public interface StocksPlugin extends Plugin {
     default Future<IStockData[]> getStockData(String... symbols) {
         return getStockData(Arrays.asList(symbols));
     }
-
 }
