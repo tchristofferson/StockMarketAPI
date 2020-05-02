@@ -21,8 +21,8 @@ public class PlayerSellAllSharesEvent extends OwnerableStockEvent {
         Validate.isTrue(shares.size() == prices.size(), "shares and prices have different sizes");
         Validate.isTrue(shares.keySet().equals(prices.keySet()), "shares and prices have mismatched symbols");
 
-        this.shares = new HashMap<>(shares);
-        this.prices = new HashMap<>(prices);
+        this.shares = shares;
+        this.prices = prices;
 
         BigDecimal total = new BigDecimal(0).setScale(2, BigDecimal.ROUND_DOWN);
         for (Map.Entry<String, Integer> entry : shares.entrySet()) {
@@ -33,15 +33,27 @@ public class PlayerSellAllSharesEvent extends OwnerableStockEvent {
     }
 
     public Map<String, Integer> getShares() {
-        return shares;
+        return new HashMap<>(shares);
     }
 
     public Map<String, Double> getPrices() {
-        return prices;
+        return new HashMap<>(prices);
+    }
+
+    public void remove(String symbol) {
+        symbol = symbol.toUpperCase();
+
+        if (!prices.containsKey(symbol))
+            throw new IllegalArgumentException("Symbol not found/not being sold");
+
+        shares.remove(symbol);
+        double price = prices.remove(symbol);
+
+        total -= price;
     }
 
     public double getTotal() {
-        return total;
+        return total < 0 ? 0 : total;
     }
 
     public void setTotal(double total) {
