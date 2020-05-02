@@ -28,4 +28,15 @@ public interface StocksPlugin extends Plugin {
     default Future<IStockData[]> getStockData(String... symbols) {
         return getStockData(Arrays.asList(symbols));
     }
+
+    boolean isStockMarketClosed();
+
+    //Minutes
+    int getCooldown();
+
+    double getTax();
+
+    double getPriceMultiplier();
+
+    boolean isTradable(String symbol);
 }
