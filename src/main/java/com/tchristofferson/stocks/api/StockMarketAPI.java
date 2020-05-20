@@ -55,6 +55,14 @@ public class StockMarketAPI {
     }
 
     /**
+     * Gets the popular stocks' symbols
+     * @return The popular stocks
+     */
+    public static String[] getPopularStocks() {
+        return implementation.getPopularStocks();
+    }
+
+    /**
      * Get weather or not the stock market is open
      * @return {@code true} if the stock market is open or if the plugin is setup to always be open, {@code false} otherwise
      */
