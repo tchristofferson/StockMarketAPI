@@ -57,6 +57,8 @@ public interface IStock extends Cloneable {
      * Get if the player has a cooldown for the specified stock
      * @return {@code true} if they have a cooldown, {@code false} otherwise
      */
-    boolean hasCooldown();
+    default boolean hasCooldown() {
+        return getCooldown() != 0;
+    }
 
 }
