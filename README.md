@@ -1,4 +1,13 @@
 # StockMarketAPI
 API for my Stocks plugin for Spigot (Minecraft)
 
-Note: This is in development and shouldn't be used right now
+## Maven
+Uploaded to Maven Central
+```
+<dependency>
+  <groupId>com.tchristofferson</groupId>
+  <artifactId>StocksAPI</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <scope>provided</scope>
+</dependency>
+```
