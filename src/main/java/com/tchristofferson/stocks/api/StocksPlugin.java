@@ -32,4 +32,6 @@ public interface StocksPlugin extends Plugin {
     double getPriceMultiplier();
 
     boolean isTradable(String symbol);
+
+    double getMaxTradeAmount();
 }

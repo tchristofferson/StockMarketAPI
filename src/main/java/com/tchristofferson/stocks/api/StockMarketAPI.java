@@ -102,4 +102,12 @@ public class StockMarketAPI {
     public static boolean isTradable(String symbol) {
         return implementation.isTradable(symbol);
     }
+
+    /**
+     * Gte the max amount of money allowed in a transaction
+     * @return The max amount of money
+     */
+    public static double getMaxTradeAmount() {
+        return implementation.getMaxTradeAmount();
+    }
 }
