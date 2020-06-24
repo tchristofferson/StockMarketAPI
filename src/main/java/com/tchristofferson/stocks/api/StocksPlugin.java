@@ -24,6 +24,8 @@ public interface StocksPlugin extends Plugin {
 
     boolean isStockMarketClosed();
 
+    boolean isCooldownsEnabled();
+
     //Minutes
     int getCooldown();
 

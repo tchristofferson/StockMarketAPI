@@ -71,6 +71,14 @@ public class StockMarketAPI {
     }
 
     /**
+     * Gets weather or not cooldowns are enabled
+     * @return {@code true} if cooldowns are enabled, {@code false} otherwise
+     */
+    public static boolean isCooldownsEnabled() {
+        return implementation.isCooldownsEnabled();
+    }
+
+    /**
      * Get the cooldown specified in the config
      * @return The cooldown in minutes
      */
