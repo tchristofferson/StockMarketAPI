@@ -65,6 +65,12 @@ public interface IStockData {
     Boolean isMarketOpen();
 
     /**
+     * Get the split data
+     * @return The split data
+     */
+    ISplitData getSplits();
+
+    /**
      * Get if the data was retrieved successfully.
      * If failed to retrieve data all methods will return {@code null}, except for {@link IStockData#getMessage()}
      * @return {@code true} if data was successfully retrieved, {@code false} otherwise

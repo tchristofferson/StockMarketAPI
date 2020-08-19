@@ -11,11 +11,11 @@ import java.util.Map;
 public class PlayerSellAllSharesEvent extends OwnerableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
-    private final Map<String, Integer> shares;
+    private final Map<String, Double> shares;
     private final Map<String, Double> prices;
     private double total;
 
-    public PlayerSellAllSharesEvent(OfflinePlayer owner, Map<String, Integer> shares, Map<String, Double> prices) {
+    public PlayerSellAllSharesEvent(OfflinePlayer owner, Map<String, Double> shares, Map<String, Double> prices) {
         super(owner);
 
         Validate.isTrue(shares.size() == prices.size(), "shares and prices have different sizes");
@@ -25,14 +25,14 @@ public class PlayerSellAllSharesEvent extends OwnerableStockEvent {
         this.prices = prices;
 
         BigDecimal total = new BigDecimal(0).setScale(2, BigDecimal.ROUND_DOWN);
-        for (Map.Entry<String, Integer> entry : shares.entrySet()) {
+        for (Map.Entry<String, Double> entry : shares.entrySet()) {
             total = total.add(BigDecimal.valueOf(entry.getValue() * prices.get(entry.getKey())));
         }
 
         this.total = total.doubleValue();
     }
 
-    public Map<String, Integer> getShares() {
+    public Map<String, Double> getShares() {
         return new HashMap<>(shares);
     }
 

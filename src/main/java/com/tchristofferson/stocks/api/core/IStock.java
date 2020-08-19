@@ -20,7 +20,7 @@ public interface IStock extends Cloneable {
      * Get the number of shares the player owns of this stock
      * @return How many shares of this stock the owning player owns
      */
-    int getShares();
+    double getShares();
 
     /**
      * Get how much the player has paid to buy all shares of the stock
@@ -32,7 +32,7 @@ public interface IStock extends Cloneable {
      * Set how many shares the owning player owns
      * @param shares The new amount of shares
      */
-    void setShares(int shares);
+    void setShares(double shares);
 
     /**
      * Set how much the owning player has invested into this stock
