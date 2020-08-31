@@ -2,6 +2,7 @@ package com.tchristofferson.stocks.api.core;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Predicate;
 
 public interface IPlayerStockData {
 
@@ -29,6 +30,26 @@ public interface IPlayerStockData {
      * @return A list of the player's stocks
      */
     List<IStock> getStocks();
+
+    /**
+     * Get a player's stocks matching the predicate
+     * @param predicate The predicate
+     * @return A player's stocks matching the predicate
+     */
+    List<IStock> getStocks(Predicate<IStock> predicate);
+
+    /**
+     * Get all of the player's stock symbols
+     * @return A list of the player's stock symbols
+     */
+    List<String> getStockSymbols();
+
+    /**
+     * Get a player's stock symbols matching the predicate
+     * @param predicate The predicate
+     * @return A list of the player's stock symbols matching the predicate
+     */
+    List<String> getStockSymbols(Predicate<IStock> predicate);
 
     /**
      * Check if a player has shares of the given stock
