@@ -55,14 +55,14 @@ public interface IStockStorage {
     /**
      * Get the date of the last time the server split the specified stock
      * @param symbol The stock symbol
-     * @return A ZonedDateTime of when the stock was last split on the server
+     * @return A ZonedDateTime of when the stock was last split on the server, or {@code null} if never
      */
     Future<ZonedDateTime> getLastSplit(String symbol);
 
     /**
      * Get the date of the last time the server checked for a split for the specified stock
      * @param symbol The stock symbol
-     * @return The ZonedDateTime of when the stock was last checked for a split
+     * @return The ZonedDateTime of when the stock was last checked for a split, or {@code null} if never
      */
     Future<ZonedDateTime> getLastSplitCheck(String symbol);
 
