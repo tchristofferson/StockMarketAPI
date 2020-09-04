@@ -2,6 +2,7 @@ package com.tchristofferson.stocks.api.core;
 
 import org.bukkit.entity.Player;
 
+import java.time.ZonedDateTime;
 import java.util.UUID;
 import java.util.concurrent.Future;
 
@@ -50,5 +51,19 @@ public interface IStockStorage {
      * @return A {@link Future<IPlayerStockData>} which will return the {@link IPlayerStockData} or {@code null} if none exists
      */
     Future<IPlayerStockData> getOfflinePlayerData(String name);
+
+    /**
+     * Get the date of the last time the server split the specified stock
+     * @param symbol The stock symbol
+     * @return A ZonedDateTime of when the stock was last split on the server
+     */
+    Future<ZonedDateTime> getLastSplit(String symbol);
+
+    /**
+     * Get the date of the last time the server checked for a split for the specified stock
+     * @param symbol The stock symbol
+     * @return The ZonedDateTime of when the stock was last checked for a split
+     */
+    Future<ZonedDateTime> getLastSplitCheck(String symbol);
 
 }
