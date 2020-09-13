@@ -2,7 +2,10 @@ package com.tchristofferson.stocks.api.core;
 
 import org.bukkit.entity.Player;
 
+import java.sql.SQLException;
 import java.time.ZonedDateTime;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.Future;
 
@@ -60,11 +63,25 @@ public interface IStockStorage {
     Future<ZonedDateTime> getLastSplit(String symbol);
 
     /**
+     * Get the dates for the specified stocks for when they were last split.<br>
+     * @param symbols The stock symbols
+     * @return A Map of symbols and the times they were split
+     */
+    Future<Map<String, ZonedDateTime>> getLastSplits(List<String> symbols);
+
+    /**
      * Get the date of the last time the server checked for a split for the specified stock
      * @param symbol The stock symbol
      * @return The ZonedDateTime of when the stock was last checked for a split, or {@code null} if never
      */
     Future<ZonedDateTime> getLastSplitCheck(String symbol);
+
+    /**
+     * Get the dates for the specified stocks for when they were last checked for a split.<br>
+     * @param symbols The stock symbols
+     * @return A Map of symbols and the times they were last checked for a split
+     */
+    Future<Map<String, ZonedDateTime>> getLastSplitChecks(List<String> symbols);
 
     /**
      * Split a stock given the divisor. This will effect every player that owns the specified stock.
