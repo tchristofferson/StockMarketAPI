@@ -1,8 +1,10 @@
 package com.tchristofferson.stocks.api;
 
 import com.tchristofferson.stocks.api.core.IStockData;
+import com.tchristofferson.stocks.api.core.IStockDataRequester;
 import com.tchristofferson.stocks.api.core.IStockStorage;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -30,8 +32,10 @@ public class StockMarketAPI {
     /**
      * Performs a web request and retrieves data for the specified symbol
      * @param symbol The symbol to retrieve data for
+     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
      * @return The stock data
      */
+    @Deprecated
     public static Future<IStockData> getStockData(String symbol) {
         return implementation.getStockData(symbol);
     }
@@ -39,8 +43,10 @@ public class StockMarketAPI {
     /**
      * Performs a web request and retrieves data for the specified symbols
      * @param symbols The symbols to retrieve data for
+     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
      * @return The stock data
      */
+    @Deprecated
     public static Future<IStockData[]> getStockData(String... symbols) {
         return implementation.getStockData(symbols);
     }
@@ -48,10 +54,30 @@ public class StockMarketAPI {
     /**
      * Performs a web request and retrieves data for the specified symbols
      * @param symbols The symbols to retrieve data for
+     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
      * @return The stock data
      */
+    @Deprecated
     public static Future<IStockData[]> getStockData(List<String> symbols) {
         return implementation.getStockData(symbols);
+    }
+
+    /**
+     * Get a stock data requester to retrieve stock data
+     * @param symbols The stock symbols you will be retrieving data for
+     * @return An IStockDataRequester with the specified stock symbols
+     */
+    public IStockDataRequester getRequester(String... symbols) {
+        return implementation.getRequester(Arrays.asList(symbols));
+    }
+
+    /**
+     * Get a stock data requester to retrieve stock data
+     * @param symbols The stock symbols you will be retrieving data for
+     * @return An IStockDataRequester with the specified stock symbols
+     */
+    public IStockDataRequester getRequester(List<String> symbols) {
+        return implementation.getRequester(symbols);
     }
 
     /**

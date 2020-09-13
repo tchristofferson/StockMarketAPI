@@ -1,6 +1,7 @@
 package com.tchristofferson.stocks.api;
 
 import com.tchristofferson.stocks.api.core.IStockData;
+import com.tchristofferson.stocks.api.core.IStockDataRequester;
 import com.tchristofferson.stocks.api.core.IStockStorage;
 import org.bukkit.plugin.Plugin;
 
@@ -12,13 +13,18 @@ public interface StocksPlugin extends Plugin {
 
     IStockStorage getStockStorage();
 
+    @Deprecated
     Future<IStockData> getStockData(String symbol);
 
+    @Deprecated
     Future<IStockData[]> getStockData(List<String> symbols);
 
+    @Deprecated
     default Future<IStockData[]> getStockData(String... symbols) {
         return getStockData(Arrays.asList(symbols));
     }
+
+    IStockDataRequester getRequester(List<String> symbols);
 
     String[] getPopularStocks();
 

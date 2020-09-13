@@ -66,4 +66,10 @@ public interface IStockStorage {
      */
     Future<ZonedDateTime> getLastSplitCheck(String symbol);
 
+    /**
+     * Split a stock given the divisor. This will effect every player that owns the specified stock.
+     * @param symbol The symbol of the stock to be split
+     * @param divisor The number the shares will be divided by
+     */
+    void splitStock(String symbol, double divisor);
 }
