@@ -58,30 +58,30 @@ public interface IStockStorage {
     /**
      * Get the date of the last time the server split the specified stock
      * @param symbol The stock symbol
-     * @return A ZonedDateTime of when the stock was last split on the server, or {@code null} if never
+     * @return The time of when the stock was last split on the server, or 0 if never
      */
-    Future<ZonedDateTime> getLastSplit(String symbol);
+    Future<Long> getLastSplit(String symbol);
 
     /**
      * Get the dates for the specified stocks for when they were last split.<br>
      * @param symbols The stock symbols
-     * @return A Map of symbols and the times they were split
+     * @return A Map of symbols and the times they were split, or 0 if never split
      */
-    Future<Map<String, ZonedDateTime>> getLastSplits(List<String> symbols);
+    Future<Map<String, Long>> getLastSplits(List<String> symbols);
 
     /**
      * Get the date of the last time the server checked for a split for the specified stock
      * @param symbol The stock symbol
-     * @return The ZonedDateTime of when the stock was last checked for a split, or {@code null} if never
+     * @return The time of when the stock was last checked for a split, or 0 if never
      */
-    Future<ZonedDateTime> getLastSplitCheck(String symbol);
+    Future<Long> getLastSplitCheck(String symbol);
 
     /**
      * Get the dates for the specified stocks for when they were last checked for a split.<br>
      * @param symbols The stock symbols
-     * @return A Map of symbols and the times they were last checked for a split
+     * @return A Map of symbols and the times they were last checked for a split, or 0 if never checked
      */
-    Future<Map<String, ZonedDateTime>> getLastSplitChecks(List<String> symbols);
+    Future<Map<String, Long>> getLastSplitChecks(List<String> symbols);
 
     /**
      * Split a stock given the divisor. This will effect every player that owns the specified stock.
