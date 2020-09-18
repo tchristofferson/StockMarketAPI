@@ -33,7 +33,6 @@ public interface IStockStorage {
 
     /**
      * Save an instance of {@link IPlayerStockData} for a player.
-     * The {@link Future#isDone()} will return {@code true} immediately if using flat file
      * @param playerStockData The player data to save for the player
      * @return {@code true} if successful, {@code false} otherwise
      */
@@ -41,7 +40,6 @@ public interface IStockStorage {
 
     /**
      * Get an offline player's {@link IPlayerStockData}.
-     * The {@link Future#isDone()} will return {@code true} immediately if using flat file or if it is still cached
      * @param uuid The {@link UUID} of the player
      * @return A {@link Future<IPlayerStockData>} which will return the {@link IPlayerStockData} or {@code null} if none exists
      */
@@ -49,7 +47,6 @@ public interface IStockStorage {
 
     /**
      * Get an offline player's {@link IPlayerStockData}.
-     * The {@link Future#isDone()} will return {@code true} immediately if using flat file or if it is still cached
      * @param name The player's username
      * @return A {@link Future<IPlayerStockData>} which will return the {@link IPlayerStockData} or {@code null} if none exists
      */
