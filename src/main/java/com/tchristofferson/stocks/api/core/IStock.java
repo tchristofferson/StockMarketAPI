@@ -63,10 +63,10 @@ public interface IStock extends Cloneable {
     }
 
     /**
-     * Get the last date shares of this stock were purchased
-     * @return last purchase date
+     * Get the last time shares of this stock were purchased
+     * @return last purchase time
      */
-    ZonedDateTime getLastPurchaseDate();
+    long getLastPurchaseTime();
 
     /**
      * Set the last date shares of this stock were purchased to the current date
