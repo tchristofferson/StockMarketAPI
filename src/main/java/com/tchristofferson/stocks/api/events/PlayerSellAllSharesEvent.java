@@ -1,5 +1,6 @@
 package com.tchristofferson.stocks.api.events;
 
+import com.tchristofferson.stocks.api.utils.FormatUtil;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -41,7 +42,7 @@ public class PlayerSellAllSharesEvent extends OwnerableStockEvent {
     }
 
     public void remove(String symbol) {
-        symbol = symbol.toUpperCase();
+        symbol = FormatUtil.formatSymbol(symbol);
 
         if (!prices.containsKey(symbol))
             throw new IllegalArgumentException("Symbol not found/not being sold");

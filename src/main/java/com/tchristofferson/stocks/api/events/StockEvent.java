@@ -1,5 +1,6 @@
 package com.tchristofferson.stocks.api.events;
 
+import com.tchristofferson.stocks.api.utils.FormatUtil;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -8,13 +9,13 @@ public class StockEvent extends OwnerableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
     private final String symbol;
-    private int shares;
+    private double shares;
     private boolean canceled;
 
-    protected StockEvent(OfflinePlayer owner, String symbol, int shares) {
+    protected StockEvent(OfflinePlayer owner, String symbol, double shares) {
         super(owner);
-        this.symbol = symbol.trim().toUpperCase();
-        this.shares = shares;
+        this.symbol = FormatUtil.formatSymbol(symbol);
+        this.shares = FormatUtil.formatShares(shares);
         this.canceled = false;
     }
 
@@ -22,7 +23,7 @@ public class StockEvent extends OwnerableStockEvent {
         return symbol;
     }
 
-    public int getShares() {
+    public double getShares() {
         return shares;
     }
 

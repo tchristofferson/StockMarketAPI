@@ -78,7 +78,7 @@ public interface IPlayerStockData {
      * @param shares The amount of shares to give
      * @return The {@link IStock} just added
      */
-    IStock addStock(String symbol, int shares, double invested);
+    IStock addStock(String symbol, double shares, double invested);
 
     /**
      * Takes all shares of the specified stock from the player

@@ -9,7 +9,7 @@ public class PriceableStockEvent extends StockEvent {
     private static final HandlerList handlers = new HandlerList();
     private double price;
 
-    protected PriceableStockEvent(OfflinePlayer owner, String symbol, int shares, double price) {
+    protected PriceableStockEvent(OfflinePlayer owner, String symbol, double shares, double price) {
         super(owner, symbol, shares);
         this.price = price;
     }

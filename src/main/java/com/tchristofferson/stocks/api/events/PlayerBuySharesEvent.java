@@ -7,7 +7,7 @@ public class PlayerBuySharesEvent extends PriceableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
 
-    public PlayerBuySharesEvent(OfflinePlayer owner, String symbol, int shares, double price) {
+    public PlayerBuySharesEvent(OfflinePlayer owner, String symbol, double shares, double price) {
         super(owner, symbol, shares, price);
     }
 

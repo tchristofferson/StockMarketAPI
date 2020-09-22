@@ -6,7 +6,7 @@ import org.bukkit.event.HandlerList;
 public class TakeSharesEvent extends StockEvent {
     private static final HandlerList handlers = new HandlerList();
 
-    public TakeSharesEvent(OfflinePlayer owner, String symbol, int shares) {
+    public TakeSharesEvent(OfflinePlayer owner, String symbol, double shares) {
         super(owner, symbol, shares);
     }
 
