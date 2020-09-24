@@ -84,6 +84,8 @@ public interface IStockStorage {
      * Split a stock given the divisor. This will effect every player that owns the specified stock.
      * @param symbol The symbol of the stock to be split
      * @param divisor The number the shares will be divided by
+     * @param skipTimeCheck If {@code true}, it will not check if a split was within the last 24 hours.
+     *                      If {@code false} and a split occurred in the last 24 hours, it will not split again
      */
-    void splitStock(String symbol, double divisor);
+    void splitStock(String symbol, double divisor, boolean skipTimeCheck);
 }
