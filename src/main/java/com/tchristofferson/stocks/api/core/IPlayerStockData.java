@@ -76,6 +76,7 @@ public interface IPlayerStockData {
      * If the player already owns shares of this stock, it will be added
      * @param symbol The stock symbol
      * @param shares The amount of shares to give
+     * @param invested The amount of money the player has invested in the specified stock
      * @return The {@link IStock} just added
      */
     IStock addStock(String symbol, double shares, double invested);

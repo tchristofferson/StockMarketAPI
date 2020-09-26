@@ -1,6 +1,5 @@
 package com.tchristofferson.stocks.api.core;
 
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 public interface IStock extends Cloneable {
@@ -69,8 +68,8 @@ public interface IStock extends Cloneable {
     long getLastPurchaseTime();
 
     /**
-     * Set the last date shares of this stock were purchased to the current date
+     * Set the last time shares of this stock were purchased to the current time
      */
-    void setLastPurchaseDate();
+    void setLastPurchaseTime();
 
 }
