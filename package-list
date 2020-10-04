@@ -1,3 +1,4 @@
 com.tchristofferson.stocks.api
 com.tchristofferson.stocks.api.core
 com.tchristofferson.stocks.api.events
+com.tchristofferson.stocks.api.utils
