@@ -6,6 +6,10 @@ API for my [Stocks plugin](https://www.spigotmc.org/resources/stock-market-plugi
 ## Maven
 Uploaded to Maven Central
 ```
+<repository>
+    <id>maven-central</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+</repository>
 <dependency>
   <groupId>com.tchristofferson</groupId>
   <artifactId>StocksAPI</artifactId>
