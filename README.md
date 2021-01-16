@@ -12,7 +12,7 @@ API for my [Stocks plugin](https://www.spigotmc.org/resources/stock-market-plugi
 <dependency>
   <groupId>com.tchristofferson</groupId>
   <artifactId>StocksAPI</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.1-SNAPSHOT</version>
   <scope>provided</scope>
 </dependency>
 ```
