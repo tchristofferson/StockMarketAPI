@@ -91,13 +91,14 @@ public interface IStock extends Cloneable {
 
     /**
      * Get the last time shares of this stock were purchased
-     * @return last purchase time
+     * @return last purchase time or 0 if {@link IStock#getShares()} returns 0
      */
-    long getLastPurchaseTime();
+    default long getLastPurchaseTime() {
+        if (getShares() == 0)
+            return 0;
 
-    /**
-     * Set the last time shares of this stock were purchased to the current time
-     */
-    void setLastPurchaseTime();
+        List<IRecord> records = getRecords();
+        return records.get(records.size() - 1).getPurchaseTime();
+    }
 
 }
