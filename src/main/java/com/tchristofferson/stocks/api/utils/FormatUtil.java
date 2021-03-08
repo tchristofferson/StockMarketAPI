@@ -25,4 +25,8 @@ public class FormatUtil {
         return BigDecimal.valueOf(d).setScale(scale, ROUNDING_MODE).doubleValue();
     }
 
+    public static double getMinSupportedMoney() {
+        return 1D * Math.pow(10, MONEY_DECIMALS * -1);
+    }
+
 }
