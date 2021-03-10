@@ -26,7 +26,7 @@ public class FormatUtil {
     }
 
     public static double getMinSupportedMoney() {
-        return 1D * Math.pow(10, MONEY_DECIMALS * -1);
+        return Math.pow(10, MONEY_DECIMALS * -1);
     }
 
 }

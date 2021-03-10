@@ -42,6 +42,13 @@ public interface IStock extends Cloneable {
     double getInvested();
 
     /**
+     * Get the amount invested for a specified number of shares
+     * @param shares The number of shares to get the invested amount
+     * @return The cost of the number of specified shares
+     */
+    double getInvested(double shares);
+
+    /**
      * Split the stock with the specified divisor
      * @param divisor Current shares are divided by the divisor
      */
@@ -50,13 +57,13 @@ public interface IStock extends Cloneable {
     /**
      * Add shares. Will also be added to the stock record with a price of 0
      * @param shares The number of shares to add
-     * @param price The price for one share
+     * @param pricePerShare The price for one share
      */
-    default void addShares(double shares, double price) {
-        addShares(shares, price, System.currentTimeMillis());
+    default void addShares(double shares, double pricePerShare) {
+        addShares(shares, pricePerShare, System.currentTimeMillis());
     }
 
-    void addShares(double shares, double price, long time);
+    void addShares(double shares, double pricePerShare, long time);
 
     /**
      * Subtract shares. Will also be taken from the end of the stock record
