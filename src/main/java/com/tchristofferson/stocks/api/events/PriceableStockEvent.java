@@ -1,5 +1,6 @@
 package com.tchristofferson.stocks.api.events;
 
+import com.tchristofferson.stocks.api.core.IStock;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -9,8 +10,8 @@ public class PriceableStockEvent extends StockEvent {
     private static final HandlerList handlers = new HandlerList();
     private double price;
 
-    protected PriceableStockEvent(OfflinePlayer owner, String symbol, double shares, double price) {
-        super(owner, symbol, shares);
+    protected PriceableStockEvent(OfflinePlayer owner, IStock stock, double shares, double price) {
+        super(owner, stock, shares);
         this.price = price;
     }
 

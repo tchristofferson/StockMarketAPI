@@ -1,5 +1,6 @@
 package com.tchristofferson.stocks.api.events;
 
+import com.tchristofferson.stocks.api.core.IStock;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.HandlerList;
@@ -7,17 +8,17 @@ import org.bukkit.event.HandlerList;
 public class StockCooldownSetEvent extends OwnerableStockEvent {
 
     private static final HandlerList handlers = new HandlerList();
-    private final String symbol;
+    private final IStock stock;
     private long expire;
 
-    public StockCooldownSetEvent(OfflinePlayer owner, String symbol, long expire) {
+    public StockCooldownSetEvent(OfflinePlayer owner, IStock stock, long expire) {
         super(owner);
-        this.symbol = symbol;
+        this.stock = stock;
         this.expire = expire;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public IStock getStock() {
+        return stock;
     }
 
     public long getExpire() {
