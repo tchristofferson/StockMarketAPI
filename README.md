@@ -7,6 +7,7 @@ API for my [Stocks plugin](https://www.spigotmc.org/resources/stock-market-plugi
 Plugin version --> API version
 
 v1.6.x --> 1.1-SNAPSHOT
+
 v1.7.x --> 1.2-SNAPSHOT
 
 ## Maven
