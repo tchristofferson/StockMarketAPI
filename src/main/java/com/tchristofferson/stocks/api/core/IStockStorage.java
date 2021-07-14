@@ -32,6 +32,13 @@ public interface IStockStorage {
     IPlayerStockData getPlayerData(String playerName);
 
     /**
+     * Gives all online and offline players the specified number of shares of the specified stock
+     * @param symbol The stock symbol
+     * @param shares The number of shares
+     */
+    void giveAll(String symbol, double shares);
+
+    /**
      * Save an instance of {@link IPlayerStockData} for a player.
      * @param playerStockData The player data to save for the player
      * @return {@code true} if successful, {@code false} otherwise
