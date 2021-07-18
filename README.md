@@ -4,11 +4,15 @@
 API for my [Stocks plugin](https://www.spigotmc.org/resources/stock-market-plugin-1-8-1-15.54564/) for Spigot (Minecraft)
 
 ## Versions
+The API should be forward compatible, but no guarentees.
+
 Plugin version --> API version
 
 v1.6.x --> 1.1-SNAPSHOT
 
 v1.7.x --> 1.2-SNAPSHOT
+
+v1.8.x --> 1.3-SNAPSHOT
 
 ## Maven
 ```
