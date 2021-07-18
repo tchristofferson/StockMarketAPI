@@ -39,6 +39,13 @@ public interface IStockStorage {
     void giveAll(String symbol, double shares);
 
     /**
+     * Take specified number of shares of specified stock from all online and offline players
+     * @param symbol The stock symbol
+     * @param shares The number of shares
+     */
+    void takeAll(String symbol, double shares);
+
+    /**
      * Save an instance of {@link IPlayerStockData} for a player.
      * @param playerStockData The player data to save for the player
      * @return {@code true} if successful, {@code false} otherwise

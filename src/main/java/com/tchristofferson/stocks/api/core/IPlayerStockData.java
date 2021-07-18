@@ -82,6 +82,16 @@ public interface IPlayerStockData {
     IStock addStock(String symbol, double shares, double invested);
 
     /**
+     *
+     * @param symbol The stock symbol
+     * @param shares The amount of shares to give
+     * @param invested The amount of money the player has invested in the specified stock
+     * @param purchaseTime The time of purchase (millis)
+     * @return The {@link IStock} just added
+     */
+    IStock addStock(String symbol, double shares, double invested, long purchaseTime);
+
+    /**
      * Takes all shares of the specified stock from the player
      * @param symbol The stock symbol
      * @return The {@link IStock} removed retaining how many shares the player had before removing
