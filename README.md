@@ -23,7 +23,7 @@ v1.8.x --> 1.3-SNAPSHOT
 <dependency>
   <groupId>com.tchristofferson</groupId>
   <artifactId>StocksAPI</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.3-SNAPSHOT</version>
   <scope>provided</scope>
 </dependency>
 ```
