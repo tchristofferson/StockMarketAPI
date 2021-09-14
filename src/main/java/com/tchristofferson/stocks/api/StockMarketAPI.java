@@ -30,34 +30,48 @@ public class StockMarketAPI {
     }
 
     /**
-     * Performs a web request and retrieves data for the specified symbol
+     * Potentially performs a web request and retrieves data for the specified symbol
      * @param symbol The symbol to retrieve data for
-     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
      * @return The stock data
      */
-    @Deprecated
     public static Future<IStockData> getStockData(String symbol) {
         return implementation.getStockData(symbol);
     }
 
     /**
-     * Performs a web request and retrieves data for the specified symbols
-     * @param symbols The symbols to retrieve data for
-     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
+     * Potentially performs a web request and retrieves data for the specified symbol
+     * @param symbol The symbol to retrieve data for
+     * @param requireLive If {@code false}, the data will be retrieved from cache if it exists, otherwise it will be fetched over internet
      * @return The stock data
      */
-    @Deprecated
+    public static Future<IStockData> getStockData(String symbol, boolean requireLive) {
+        return implementation.getStockData(symbol, requireLive);
+    }
+
+    /**
+     * Potentially performs a web request and retrieves data for the specified symbols
+     * @param symbols The symbols to retrieve data for
+     * @return The stock data
+     */
     public static Future<IStockData[]> getStockData(String... symbols) {
         return implementation.getStockData(symbols);
     }
 
     /**
-     * Performs a web request and retrieves data for the specified symbols
+     * Potentially performs a web request and retrieves data for the specified symbols
+     * @param requireLive If {@code false}, the data will be retrieved from cache if it exists, otherwise it will be fetched over internet
      * @param symbols The symbols to retrieve data for
-     * @deprecated Use {@link StockMarketAPI#getRequester(List)}
      * @return The stock data
      */
-    @Deprecated
+    public static Future<IStockData[]> getStockData(boolean requireLive, String... symbols) {
+        return implementation.getStockData(requireLive, symbols);
+    }
+
+    /**
+     * Potentially performs a web request and retrieves data for the specified symbols
+     * @param symbols The symbols to retrieve data for
+     * @return The stock data
+     */
     public static Future<IStockData[]> getStockData(List<String> symbols) {
         return implementation.getStockData(symbols);
     }

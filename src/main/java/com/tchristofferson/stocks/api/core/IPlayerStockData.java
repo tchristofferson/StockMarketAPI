@@ -98,4 +98,21 @@ public interface IPlayerStockData {
      */
     IStock removeStock(String symbol);
 
+    /**
+     * Updates the total value/worth of the player's portfolio
+     */
+    void updatePortfolioValueAsync();
+
+    /**
+     * Get the total/worth of the player's portfolio
+     * @return The value or -1 if it hasn't been set
+     */
+    double getPortfolioValue();
+
+    /**
+     * Get if the portfolio value has been calculated or not
+     * @return {@code true} if the value has been calculated, otherwise {@code false}
+     */
+    boolean hasPortfolioValue();
+
 }

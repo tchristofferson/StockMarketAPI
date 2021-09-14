@@ -1,5 +1,6 @@
 package com.tchristofferson.stocks.api;
 
+import com.tchristofferson.stocks.api.core.IStock;
 import com.tchristofferson.stocks.api.core.IStockData;
 import com.tchristofferson.stocks.api.core.IStockDataRequester;
 import com.tchristofferson.stocks.api.core.IStockStorage;
@@ -13,15 +14,20 @@ public interface StocksPlugin extends Plugin {
 
     IStockStorage getStockStorage();
 
-    @Deprecated
     Future<IStockData> getStockData(String symbol);
 
-    @Deprecated
+    Future<IStockData> getStockData(String symbol, boolean requireLive);
+
     Future<IStockData[]> getStockData(List<String> symbols);
 
-    @Deprecated
+    Future<IStockData[]> getStockData(List<String> symbols, boolean requireLive);
+
     default Future<IStockData[]> getStockData(String... symbols) {
         return getStockData(Arrays.asList(symbols));
+    }
+
+    default Future<IStockData[]> getStockData(boolean requireLive, String... symbols) {
+        return getStockData(Arrays.asList(symbols), requireLive);
     }
 
     IStockDataRequester getRequester(List<String> symbols);
