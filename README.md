@@ -12,7 +12,7 @@ v1.6.x --> 1.1-SNAPSHOT
 
 v1.7.x --> 1.2-SNAPSHOT
 
-v1.8.x --> 1.3-SNAPSHOT
+v1.8.x --> 1.3-SNAPSHOT - 1.4-SNAPSHOT
 
 ## Maven
 ```
@@ -23,7 +23,7 @@ v1.8.x --> 1.3-SNAPSHOT
 <dependency>
   <groupId>com.tchristofferson</groupId>
   <artifactId>StocksAPI</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.4-SNAPSHOT</version>
   <scope>provided</scope>
 </dependency>
 ```
