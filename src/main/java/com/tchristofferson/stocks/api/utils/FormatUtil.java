@@ -10,6 +10,9 @@ public class FormatUtil {
     public static final int MONEY_DECIMALS = 2;
 
     public static String formatSymbol(String symbol) {
+        if (symbol == null || symbol.isEmpty())
+            return "";
+
         return symbol.trim().toUpperCase();
     }
 
