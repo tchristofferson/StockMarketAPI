@@ -12,7 +12,7 @@ v1.6.x --> 1.1-SNAPSHOT
 
 v1.7.x --> 1.2-SNAPSHOT
 
-v1.8.x --> 1.3-SNAPSHOT
+v1.8.x - 1.9.x --> 1.3-SNAPSHOT
 
 ## Maven
 ```
